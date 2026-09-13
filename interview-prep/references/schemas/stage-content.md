@@ -15,6 +15,16 @@ stage:
       description: string
         # 这个阶段你做出了什么东西——系统/框架/体系/方案
         # 描述它怎么运作、关键组件是什么
+      design_dimensions:         # Stage 4（方案设计）专用，其他阶段可省略
+        type: list[object]       # 可选
+        items:
+          dimension: string      # 维度名（如"流程编排"、"Prompt治理"、"缓存/成本工程"）
+          decision: string       # 选了什么
+          rationale: string      # 为什么这么选
+          alternative_rejected: string  # 替代方案为什么不选
+        # 对应 phase3-full-generation.md 中"技术判断力深度清单"的逐项展开
+        # Stage 4 必须填写（自研≥5项/服务商≥4项/参与≥3项），其他阶段可省略
+        # 每项三段论：决策 + 理由 + 被拒替代方案
       deliverables:
         - string
         # 交付物清单（文档/系统/方案/报告等）

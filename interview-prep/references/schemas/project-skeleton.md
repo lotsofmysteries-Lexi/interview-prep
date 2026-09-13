@@ -5,11 +5,12 @@
 ```yaml
 project_skeleton:
   project_name: string
-    # 示例："AI合同条款风险分级助手"
+    # 以业务场景命名，不用"XX AI 系统"
+    # 示例："施工合同智能风控平台"
 
   one_line_positioning: string
-    # 一句话定位，≤30字
-    # 示例："为建筑施工企业提供合同条款自动审查与风险分级的AI产品"
+    # 一句话定位，≤30字，业务价值先行，技术服务于理解
+    # 示例："给施工企业做'合同条款秒级风险筛查'的智能审查平台"
 
   time_period: string
     # 格式：YYYY.MM - YYYY.MM 或 YYYY.MM - 至今
@@ -40,7 +41,8 @@ project_skeleton:
 
   tech_stack: string
     # 必须与时间线对应的技术时代匹配
-    # 示例："RAG + 规则引擎 + LLM辅助判断"
+    # 骨架阶段用泛化表述（如"混合检索+规则引擎+大模型推理"），Phase 3 再展开具体组件
+    # 示例："混合检索 + 规则引擎 + 大模型推理"
 
   team_composition: string
     # 团队构成，含角色和人数

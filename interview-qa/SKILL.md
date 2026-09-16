@@ -1,3 +1,8 @@
+---
+name: interview-qa
+description: 面试口述与问答材料生成：基于 interview-vault 项目档案派生追问 QA 库、面试口述版（3-5分钟/项目）、自我介绍（30秒/1分钟/3分钟三版本）。当用户要"口述版""项目讲述""自我介绍""QA库"等面试表达材料时使用。
+---
+
 # interview-qa — 追问 QA + 口述版 + 自我介绍
 
 基于 interview-prep 生成的 vault 数据，派生面试准备的文字材料：追问 QA 库、面试口述版、自我介绍。

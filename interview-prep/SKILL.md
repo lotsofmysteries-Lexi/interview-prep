@@ -1,3 +1,8 @@
+---
+name: interview-prep
+description: 面试准备项目生成引擎：深度采集用户信息，推演生成完整 AI 项目档案（interview-vault），供简历、QA、面试模拟等下游 skill 使用。当用户要准备 AI 岗位面试、系统化构建项目经历、建档/新建项目/选场景/生成骨架/生成详情/入库时使用。
+---
+
 # interview-prep — 项目生成引擎
 
 面试准备的本体 skill。通过深度采集用户信息，推演生成完整的 AI 项目档案，供下游 skill（简历、QA、面试模拟等）使用。

@@ -1,3 +1,8 @@
+---
+name: interview-resume
+description: 简历生成：基于 interview-vault 项目档案自动派生简历，输出可复制文本简历 + 自适应 HTML 简历双版本。当用户要"生成简历""出简历""简历精装版"时使用。
+---
+
 # interview-resume — 简历生成
 
 基于 interview-prep 生成的 vault 数据，自动派生简历。输出双版本：可复制文本简历 + 自适应 HTML 简历。

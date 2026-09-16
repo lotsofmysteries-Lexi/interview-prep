@@ -1,3 +1,8 @@
+---
+name: interview-review
+description: 面试复盘：面试结束后基于转录文稿/笔记和 vault 档案做系统化复盘，定位答得失、改写更优回答、生成档案补丁回流 vault。当用户要"复盘刚才的面试""整理面试记录"时使用。
+---
+
 # interview-review — 面试复盘
 
 面试结束后，基于转录文稿和 vault 档案快照进行系统化复盘，产出档案补丁回流到 vault。

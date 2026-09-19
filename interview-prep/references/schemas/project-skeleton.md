@@ -57,6 +57,21 @@ project_skeleton:
     # - 审查周期：5天 → 1天（-80%）
     # - 高风险漏检率：18% → 4.5%（-75%）
     # 约束：数值必须通过行业常识校验（参见 calibration-rules.md）
+
+  source_boundary:
+    # 必填。骨架之后独立成节 `## 信源分界`，不在 yaml 里展开，此处仅登记元信息
+    # 详见 references/source-boundary.md
+    direct: [string]
+      # 🟢 原件直给——素材里能指到原句的内容
+    inferred: [string]
+      # 🟡 素材提到了方向，量级/数字为系统推演
+    fabricated: [string]
+      # 🔴 素材零字、全部推演（核心卖点/技术决策/价值主张常落在此档）
+    skeleton_level_risk: string
+      # ⚠️ 骨架级风险：一旦不符需整个项目重做的那一项（区别于数字级）
+      # 三个典型位置：核心差异化是什么 / 用户实际负责什么 / 成果是什么
+    source_strength: enum [书面详实, 书面薄弱, 仅口述, 无任何依据]
+      # 仅"无任何依据"或"仅口述"时，分界节开头须直白说明源本身的问题
 ```
 
 ## 校验规则
@@ -65,6 +80,9 @@ project_skeleton:
 - `your_role` 的措辞必须与用户年限对应的叙事视角一致
 - `expected_metrics` 的数值必须与 `team_composition` 和 `time_period` 规模匹配
 - `company` 如涉及真实公司名须脱敏
+- **`source_boundary` 必填**：三档均需给出（某档为空也要显式写"无"），且必须标出 `skeleton_level_risk`
+- **`source_strength` 为"仅口述"或"无任何依据"时**：核对清单第 1 位必须是前置项
+  「这段经历是否存在」，并提示该内容无法通过背调
 
 ## Vault 存储路径
 

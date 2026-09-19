@@ -91,7 +91,8 @@ for d in "$REPO"/*/; do
     note="无需操作"
   else
     status="有差异"
-    note="$(diff -rq "$d" "$dest" 2>/dev/null | wc -l | tr -d ' ') 处文件不一致，将同步"
+    # 注意：diff -rq 发现差异时返回 1，配合 set -o pipefail 会中断脚本 —— 必须 `|| true` 兜住
+    note="$( { diff -rq "$d" "$dest" 2>/dev/null || true; } | wc -l | tr -d ' ' ) 处文件不一致，将同步"
     differences=$((differences + 1))
   fi
 

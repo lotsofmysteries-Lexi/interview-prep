@@ -91,7 +91,7 @@
 
 ## 跨项目汇总
 
-Phase 2 统一复核时，须在 `outputs/resume-framework.md` 增加 **「信源分界总表」**：
+Phase 2 终检时（随末个骨架确认），须在 `outputs/resume-framework.md` 增加 **「信源分界总表」**：
 
 | 项目 | 🟢 原件直给 | 🟡 有线索·数字我填 | 🔴 零字全推演 |
 |---|---|---|---|

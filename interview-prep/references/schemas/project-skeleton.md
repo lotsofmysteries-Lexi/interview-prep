@@ -86,4 +86,4 @@ project_skeleton:
 
 ## Vault 存储路径
 
-`interview-vault/projects/proj-{NNN}/skeleton.md`
+`interview-vault/profile/master.md` → 「项目骨架一览」章节下该项目小节（v2.0）

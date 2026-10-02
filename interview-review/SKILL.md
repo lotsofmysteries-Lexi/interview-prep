@@ -41,3 +41,10 @@ interview-vault/interviews/<公司-日期>/
     ├── patch-001.md
     └── ...
 ```
+
+## 新题回流 qa-db（v2.0 新增）
+
+复盘 Step 1 提取的 QA 对中，**被问到但没准备/答得不好的通用题**（不限于本项目的项目专属细节），
+按 `interview-qa/references/qa-db-maintenance.md` 的 SOP 入库 qa-db：
+查重（`qa-db-tools.py dedup`）→ 格式入库 → `index` 重建 → CHANGELOG 记一笔。
+这是题库四条新题来源渠道中的主渠道，每次复盘顺手完成，不需要用户单独发起。

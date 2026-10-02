@@ -87,8 +87,8 @@
 
 ### 骨架之后必须紧跟：信源分界
 
-骨架是"要讲的内容"，信源分界是"哪些内容有依据"。**两者必须写在同一份 `skeleton.md` 里**，
-否则用户和下游 skill 都无从分辨。格式与判定规则见 `references/source-boundary.md`。
+骨架是"要讲的内容"，信源分界是"哪些内容有依据"。**两者必须写在同一个小节里**
+（master.md 项目骨架一览下的该项目小节），否则用户和下游 skill 都无从分辨。格式与判定规则见 `references/source-boundary.md`。
 
 ```markdown
 ## 信源分界（哪些是原件里的，哪些是我推的）
@@ -236,11 +236,15 @@ Phase 3 全量生成时在对应阶段展开讲。
 
 ## 骨架存储
 
-每个项目的骨架存入：
+每个项目的骨架**追加**写入 master 的骨架章节（v2.0 不再使用独立 skeleton.md）：
 
 ```
-interview-vault/projects/proj-{NNN}/skeleton.md
+interview-vault/profile/master.md → 「## 项目骨架一览」章节下的「### proj-{NNN}：{项目名}」小节
 ```
+
+- 骨架内容与信源分界**连在一起写入同一个小节**（信源分界是骨架的附属段，见上文）
+- 每个小节开头加一行导航：`full-card → projects/proj-{NNN}/full-card.md`
+- 统一复核与叙事顺序调整都在 master 的骨架一览上操作（全项目骨架一处可查）
 
 简历框架存入：
 

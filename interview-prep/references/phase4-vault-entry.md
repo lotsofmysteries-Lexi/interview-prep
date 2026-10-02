@@ -14,7 +14,7 @@
 project_card:
   metadata:
     project_id: proj-{NNN}
-    skeleton_ref: interview-vault/projects/proj-{NNN}/skeleton.md
+    skeleton_ref: interview-vault/profile/master.md#项目骨架一览/proj-{NNN}
     created_at: [当前日期]
     last_modified: [当前日期]
     readiness_score: [待计算]
@@ -74,7 +74,7 @@ project_card:
 汇集所有阶段的追问预埋：
   按 type（方案/决策/落地/反思）分类
   按 probing_intensity 排序
-  ⚠️ 继承 skeleton.md「信源分界」的档位：🔴 零字全推演的内容若进入 qa-bank，
+  ⚠️ 继承 master.md 该项目骨架小节「信源分界」的档位：🔴 零字全推演的内容若进入追问预埋，
      必须在条目上打标 source: fabricated —— 否则下游 interview-qa 会把它
      当成"必须背下来"的事实，用户照背照讲，面试时出事
 ```
@@ -229,35 +229,28 @@ for 追问 in 随机选取的 3-5 个追问预埋:
 
 ```
 interview-vault/projects/proj-{NNN}/
-├── skeleton.md      # Phase 2 已存
-├── full-card.md     # 完整档案（本步骤存入，含 extracted_indices）
-└── qa-bank.md       # 追问QA库（从 extracted_indices.qa_bank 导出）
+└── full-card.md     # 完整档案（本步骤存入，含 extracted_indices）
+
+# v2.0：骨架在 profile/master.md 的「项目骨架一览」（Phase 2 已存）
+# v2.0：不再导出独立 qa-bank.md —— QA 由 interview-qa 交互环节现场生成（qa-db × full-card），
+#       演练留存按需写入 interviews/
 ```
 
-### qa-bank.md 的导出方式（别手抄）
+### QA 产物的去向（v2.0 变更）
 
-`qa-bank.md` **不要手写** —— 它必须与 `full-card.md` 里的 `extracted_indices.qa_bank` 逐字一致，
-手抄必然漂移。用随 skill 提供的脚本导出：
+- v1 的 `qa-bank.md`（含 export-qa-bank.py 导出流程）已废弃，`extracted_indices.qa_bank` 仍保留在 full-card 内，作为**追问预埋的唯一事实源**
+- QA 演练题不再落盘：由 interview-qa 的交互环节现场生成（题库层 `interview-qa/references/qa-db/` 命中 × full-card 事实层），逐题与用户确认
+- 用户希望留存演练结果时，写入 `interviews/qa-sessions/{日期}-{主题}.md`，不进 `projects/`
+- 「高频通用追问」（最大挑战 / 最大贡献 / 量化成果 / 团队协作 / 重新做会怎么改）同样在交互环节生成，引用该项目演进脉络与 metrics；注意各项目的**讲法边界**（如个人工具项目价值不得折算成金额）
 
-```bash
-# 必须在 vault 的 projects/ 目录下执行（脚本按 proj-*/full-card.md 相对路径读取）
-cd <vault>/projects
-python3 <skill>/scripts/export-qa-bank.py            # 不带参数：自动扫描所有 proj-*/full-card.md
-python3 <skill>/scripts/export-qa-bank.py proj-004   # 或指定项目
-```
+### 旧 vault 一次性迁移（v1 → v2）
 
-脚本行为：
-- 从 `full-card.md` 的**最后一个 ```yaml 代码块**解析 `extracted_indices.qa_bank`
-- 按阶段分组输出（带追问强度星级），并在文末附「按追问类型速览」
-- 自动统计并前置提示 `source: fabricated` 条目数
-- **会重写同名 `qa-bank.md`**，但**会保留**已有的「高频通用追问」手工段（检测 `## 高频通用追问`
-  起始位置后原样接在末尾）—— 所以脚本可以安全重跑，不用先备份再拼接
-- 首次导出时手工段还不存在，仍需按下面的说明补一次；之后重跑就会自动带上
+遇到 v1 结构的 vault（含 skeleton.md / qa-bank.md）时，先迁移再继续：
 
-> ⚠️ 导出的 `qa-bank.md` 只有各阶段预埋问答。按 `interview-qa/references/qa-bank-rules.md`
-> 的「高频追问补充」，**每个项目**还需手工补一节 **高频通用追问**（最大挑战 / 最大贡献 /
-> 量化成果 / 团队协作 / 重新做会怎么改）—— 这 5 条要引用该项目的演进脉络与 metrics，无法脚本化。
-> 补写时注意各项目的**讲法边界**，例如 `proj-003` 是个人工具、价值**不得折算成金额**。
+1. 三个 `skeleton.md` 的骨架 + 信源分界并入 `profile/master.md`「项目骨架一览」各小节 → 删除原文件
+2. 各 `qa-bank.md` 的条目与 full-card 追问预埋**去重合并**（追问预埋是唯一事实源）→ 删除原文件
+3. `outputs/qa-bank-full.md` 移入 `interviews/` 或废弃（询问用户）
+4. 迁移后每个项目目录只剩 `full-card.md`
 
 ### readiness_score 回填
 

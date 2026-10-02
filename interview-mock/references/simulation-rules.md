@@ -43,7 +43,7 @@
 
 ```
 已知问题测试：
-  从 qa-bank.md 中选取追问预埋
+  从 full-card.md 的 extracted_indices.qa_bank（追问预埋）+ interview-qa/references/qa-db/ 题库层选题
   检查候选人是否能回答到预设的 answer_points
   如果回答偏离，追问引导回来
 
@@ -92,7 +92,7 @@
   💡 建议话术：[推荐的回答方式]
 
   参考答案（来自你的档案）：
-  [qa-bank 中对应的 answer_points]
+  [追问预埋中对应的 answer_points]
 ```
 
 ## 模拟结束后的总结
@@ -125,6 +125,6 @@
 
 | 发现 | 触发 |
 |------|------|
-| 答不上来的问题 | → 建议补充到 qa-bank（interview-qa skill） |
+| 答不上来的问题 | → 通用题建议回流 qa-db（见 qa-db-maintenance.md）；项目专属题建议补充 full-card 追问预埋 |
 | 暴露的知识盲区 | → 建议补充项目档案（interview-prep skill Phase 3） |
 | 话术不顺畅 | → 建议重新生成口述版（interview-qa skill） |

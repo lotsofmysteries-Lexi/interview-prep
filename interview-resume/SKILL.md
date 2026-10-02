@@ -48,6 +48,11 @@ description: 简历生成：基于 interview-vault 项目档案自动派生简�
 - `references/resume-text-rules.md`：三套写作体系 + 项目段压缩规则
 - `references/resume-html-template.md`：HTML 排版规格
 - `interview-prep/references/calibration-rules.md`：写作哲学 + 禁止清单
+- `interview-prep/references/north-star-metrics.md`：**业务价值段改写规则（v2.0）**——项目成果每条必须按"三级 AI 功能 → 二级指标 → 一级指标"链路表达，幅度可归因；禁止不挂靠二级指标的功能描述。数据源：full-card Stage 1 的业务指标映射表
+
+## 简化规则边界（v2.0 显式声明）
+
+"3+2 精简法"等简化类规则**只属于 resume 模板**。full-card 是方案全量信息（深度优先），禁止把简历的简化逻辑回流到 full-card 或 QA 演练。
 
 ## 输出存储
 

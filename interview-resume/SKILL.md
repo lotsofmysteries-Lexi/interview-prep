@@ -22,7 +22,7 @@ description: 简历生成：基于 interview-vault 项目档案自动派生简�
 | "更新简历" | vault 数据变更后重新生成 |
 | "调整简历" | 微调已生成的简历（措辞、排版、排序） |
 
-## 生成流程
+## 生成流程（协议点 RS-CP-01/02，见 interview-prep/references/interaction-protocol.md）
 
 1. **读取 vault**：读取画像 + 所有已入库项目的完整档案
 2. **确定写作体系**：根据画像中的 `writing_system` 套用对应体系（见 `references/resume-text-rules.md`）

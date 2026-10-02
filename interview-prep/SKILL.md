@@ -58,6 +58,15 @@ Phase 3+4 × 项目3  全量生成 → 入库
 2. **增量生成**：多轮扩写/修改用**增量 Edit** 替代全文件重写；扩写前先输出"扩写计划"（改哪几节、各节加什么）经用户确认再动手，避免返工整篇重写
 3. **机械操作转脚本**：索引生成、格式校验、文件合并等确定性操作一律走 `scripts/`，不占对话 token
 
+### 交互协议（HITL 强制，v2.2）
+
+所有用户确认环节按 `references/interaction-protocol.md` 的**确认点注册表**执行：
+
+- 确认点有 ID（CP-01~CP-15）、时机谓词、合法形式（A/T/S）、skip 策略——**漏发即违规，跳过必须声明**
+- 每次 HITL 输出 = 进度指针（📍 当前位置/已完成/剩余）+ 确认内容
+- 用户批量授权（"全部确认/直接继续"）只覆盖当前项目后续同级及更低级别 CP，跨项目不继承；`never` 级（CP-01 边界项/CP-11 骨架级风险）不受授权豁免
+- 每个 CP 触发/跳过写 usage-log 记录点（hitl_fired / hitl_skipped），收尾统计漏发数必须为 0
+
 ### 交互 log（收尾强制）
 
 会话结束（Phase 4 入库完成或用户中止）时，按 `references/usage-log-protocol.md` 自动生成全量交互 log：过程中只写 JSONL 轻量记录点（`skill-logs/records/`），收尾用 `interview-prep/scripts/usage-log-tools.py` 汇编成文。用户明确说"不用记 log"可跳过成文，记录点照常写。

@@ -29,7 +29,7 @@ description: 面试口述与问答演练：基于 qa-db 题库 × vault 项目�
 | 口述版 | projects/proj-*/full-card.md → stages.solution + extracted_indices.metrics | — |
 | 自我介绍 | profile/master.md + 跨项目 evidence + industry_thread | — |
 
-## QA 演练流程（交互优化环节）
+## QA 演练流程（交互优化环节；协议点 QA-CP-01~03，见 interview-prep/references/interaction-protocol.md）
 
 1. **命中**：读 full-card 主题 tags → 用 `scripts/qa-db-tools.py dedup --query` 与 index.md 命中相关题（预计每项目 25-40 题）
 2. **融合**：命中题的"回答框架 × 事实层"按融合钩子注入具体事实，生成个性化答案

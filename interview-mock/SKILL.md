@@ -29,8 +29,8 @@ description: 面试模拟：角色扮演面试官，基于 vault 全量数据进
 
 | 来源 | 用途 |
 |------|------|
-| profile/master.md | 面试官了解候选人背景 |
-| projects/*/full-card.md | 全量项目档案 |
-| projects/*/qa-bank.md | 追问题库 |
+| profile/master.md | 面试官了解候选人背景（含项目骨架一览） |
+| projects/*/full-card.md | 全量项目档案（含追问预埋） |
+| interview-qa/references/qa-db/ | 通用题库层（qa-db 命中 × full-card 事实现场生成，v2.0 起无独立 qa-bank.md） |
 | outputs/jd-match/ | JD 匹配缺口（如有） |
-| interviews/ | 历史面试记录（如有） |
+| interviews/ | 历史面试记录与 QA 演练留存（如有） |

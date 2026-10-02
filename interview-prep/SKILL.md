@@ -51,8 +51,18 @@ Phase 3+4 × 项目1  全量生成 → 入库
 Phase 3+4 × 项目2  全量生成 → 入库
 Phase 3+4 × 项目3  全量生成 → 入库
   ↓
-全量下游输出（简历精装版 / QA库 / 口述版 / 技能清单 ...）
+全量下游输出（简历精装版 / QA演练 / 口述版 / 技能清单 ...）
 ```
+
+### 生成策略（Token/效率规则，强制）
+
+1. **渐进式文件加载**：进入对应 Phase 才读该 phase 的 reference 文件，禁止一次性全量加载。用户中途跳阶段时，补读目标阶段的 reference 再继续
+2. **增量生成**：多轮扩写/修改用**增量 Edit** 替代全文件重写；扩写前先输出"扩写计划"（改哪几节、各节加什么）经用户确认再动手，避免返工整篇重写
+3. **机械操作转脚本**：索引生成、格式校验、文件合并等确定性操作一律走 `scripts/`，不占对话 token
+
+### 交互 log（收尾强制）
+
+会话结束（Phase 4 入库完成或用户中止）时，按 `references/usage-log-protocol.md` 自动生成全量交互 log：过程中只写 JSONL 轻量记录点（`skill-logs/records/`），收尾用 `interview-prep/scripts/usage-log-tools.py` 汇编成文。用户明确说"不用记 log"可跳过成文，记录点照常写。
 
 ### 写作哲学
 
@@ -64,8 +74,9 @@ Phase 3+4 × 项目3  全量生成 → 入库
 
 ### 信源分界（强制）
 
-推演的副作用是**真实内容与虚构内容在成品里长得一模一样**。所以每个项目的 `skeleton.md`
-必须包含一节 `## 信源分界`，把全部内容按 🟢原件直给 / 🟡有线索·数字待填 / 🔴零字全推演 三档归类，
+推演的副作用是**真实内容与虚构内容在成品里长得一模一样**。所以每个项目的骨架（存于
+`profile/master.md` 的「项目骨架一览」章节）必须附一节 `## 信源分界`，把全部内容按
+🟢原件直给 / 🟡有线索·数字待填 / 🔴零字全推演 三档归类，
 并标出**骨架级风险**（方向错了要整个重做的那一项，区别于数字级风险）。
 
 - 素材薄弱时（一句话或零量化），分界节开头必须先说明源本身的问题，而不是只列"数字待替换"
@@ -91,19 +102,29 @@ Phase 3+4 × 项目3  全量生成 → 入库
 
 无论用户的交付模式是自研、外包还是服务商合作，生成的内容都必须确保：用户能讲清每一个技术决策的理由。交付模式只影响"谁执行"，不影响"谁懂技术"。
 
-## 数据存储
+## 数据存储（v2.0 结构）
 
 ```
 interview-vault/
-├── profile/master.md                    # Phase 0 产出
+├── profile/master.md                    # Phase 0 画像 + 各项目骨架（「项目骨架一览」章节，Phase 2 追加）+ 信源分界
 ├── projects/proj-{NNN}/
-│   ├── skeleton.md                      # Phase 2 产出
-│   ├── full-card.md                     # Phase 3+4 产出
-│   └── qa-bank.md                       # Phase 4 提取
+│   └── full-card.md                     # Phase 3+4 产出：项目唯一全量档案
+│                                        #   （综述 / 6阶段方案 / 咬合总账 / 追问预埋 / extracted_indices）
 ├── outputs/
 │   └── resume-framework.md              # Phase 2 统一复核后产出
-└── interviews/                          # 面试复盘产出
+└── interviews/                          # 面试复盘 + QA 演练留存
 ```
+
+**v2.0 去冗余规则**（分层事实源，任何信息只存一处）：
+
+| 信息 | 唯一存储位置 |
+|------|-------------|
+| 骨架级内容（一页纸骨架 + 信源分界） | `profile/master.md` 项目骨架一览 |
+| 方案级内容（6 阶段方案 / 咬合总账 / 追问预埋） | `projects/proj-{NNN}/full-card.md` |
+| QA 题目（通用题库） | `interview-qa/references/qa-db/`（跨 skill 单一事实源，本 skill 跨包引用，不复制） |
+| QA 事实答案 | 不落独立文件——由 interview-qa 交互环节现场生成（qa-db 命中 × full-card 事实），留存才写入 `interviews/` |
+
+> v1 的 `projects/proj-{NNN}/skeleton.md` 与 `qa-bank.md` 已废弃；旧 vault 按 phase4 的迁移说明一次性并入。
 
 ## 下游 skill
 
@@ -111,8 +132,8 @@ interview-vault/
 
 | Skill | 用途 | 依赖 |
 |-------|------|------|
-| interview-resume | 简历生成 | profile + projects |
-| interview-qa | 追问QA + 口述版 + 自我介绍 | projects（qa_bank + extracted_indices）|
+| interview-resume | 简历生成 | profile（含骨架一览）+ projects；业务价值段遵循 `references/north-star-metrics.md` |
+| interview-qa | 交互式 QA 演练 + 口述版 + 自我介绍 | `interview-qa/references/qa-db/`（题库层）× full-card（事实层）|
 | interview-jd | JD 解析 + 匹配 | profile + projects（keywords）|
-| interview-mock | 面试模拟 | 全部 vault 数据 |
-| interview-review | 面试复盘 | 全部 vault 数据 + 面试记录 |
+| interview-mock | 面试模拟 | 全部 vault 数据 + qa-db |
+| interview-review | 面试复盘 | 全部 vault 数据 + 面试记录；新题回流 qa-db |

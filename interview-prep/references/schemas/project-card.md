@@ -9,7 +9,7 @@ project_card:
   # ── 元数据 ──
   metadata:
     project_id: string          # 如 "proj-001"
-    skeleton_ref: string        # 关联的骨架文件路径
+    skeleton_ref: string        # 骨架位置：profile/master.md#项目骨架一览/proj-{NNN}（v2.0）
     created_at: date
     last_modified: date
     readiness_score: integer    # 准备度评分（0-100），Phase 4 计算
@@ -65,9 +65,9 @@ project_card:
 
 ```
 interview-vault/projects/proj-{NNN}/
-├── skeleton.md      # 一页纸骨架（Phase 2 产出）
+├── (骨架在 profile/master.md「项目骨架一览」，v2.0 无独立 skeleton.md)
 ├── full-card.md     # 完整档案（Phase 3+4 产出，遵循本 schema）
-└── qa-bank.md       # 追问QA库（从 extracted_indices.qa_bank 单独导出）
+└── (v2.0 无独立 qa-bank.md：QA 由 interview-qa 交互生成，qa_bank 仅保留在 extracted_indices 内)
 ```
 
 ## 版本与补丁

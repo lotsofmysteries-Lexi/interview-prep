@@ -114,11 +114,13 @@ Phase 3+4 × 项目3  全量生成 → 入库
 ```
 interview-vault/
 ├── profile/master.md                    # Phase 0 画像 + 各项目骨架（「项目骨架一览」章节，Phase 2 追加）+ 信源分界
+├── profile/work-style.yaml              # 工作偏好/能量模式/职业价值观侧写（interview-jd 深档维护，L1/L2/L3 + 更新日志）
 ├── projects/proj-{NNN}/
 │   └── full-card.md                     # Phase 3+4 产出：项目唯一全量档案
 │                                        #   （综述 / 6阶段方案 / 咬合总账 / 追问预埋 / extracted_indices）
 ├── outputs/
-│   └── resume-framework.md              # Phase 2 终检后产出
+│   ├── resume-framework.md              # Phase 2 终检后产出
+│   └── jd-match/<公司-岗位>/            # interview-jd 产出：jd-analysis.md / match-report.md（快档）、company-analysis.md（深档）
 └── interviews/                          # 面试复盘 + QA 演练留存
 ```
 

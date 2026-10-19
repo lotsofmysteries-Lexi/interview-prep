@@ -3,14 +3,16 @@ name: interview-jd
 description: JD 解析与人岗匹配 + 深度岗位与公司分析。快档：解析目标岗位 JD，与 vault 项目档案做匹配分析，产出匹配度报告、缺口清单、迁移建议和简历裁剪策略。深档：拆解岗位本质与公司战略定位，联网双子 Agent 检索，人格-岗位匹配，产出 company-analysis.md 深度报告。当用户发来 JD 要求"解析这个岗位""匹配度怎么样""针对性改简历"（快档）或"深度分析这家公司""值不值得去""帮我准备这家公司的面试"（深档）时使用。
 ---
 
-# interview-jd（匹配报告确认 = JD-CP-01，深档确认 = JD-CP-02/03，见 interview-prep/references/interaction-protocol.md） — JD 解析 + 匹配 + 深度分析
+# interview-jd — JD 解析 + 匹配 + 深度分析
+
+> HITL：匹配报告确认 = JD-CP-01，深档确认 = JD-CP-02/03，注册表见 `interview-prep/references/interaction-protocol.md`。
 
 双档设计：
 
 | 档位 | 流程 | 触发 |
 |------|------|------|
 | 快档 | JD 结构化 + vault 匹配 + 缺口清单 + 简历裁剪 | "分析这个 JD""匹配度怎么样""差距在哪" |
-| 深档 | 联网深度分析（岗位本质拆解 + 公司分析 + 人格匹配 + HR 话术） | "深度分析这家公司""值不值得去""帮我准备这家公司的面试"，或快档结束后经 JD-CP-02 确认升级 |
+| 深档 | 联网深度分析（岗位本质拆解 + 公司分析 + 人格匹配 + HR 话术） | "深度分析这家公司""值不值得去""帮我准备这家公司的面试" |
 
 ## 前置条件
 
@@ -47,7 +49,7 @@ interview-vault/outputs/jd-match/<公司-岗位>/
 
 ## 侧写数据
 
-- `interview-vault/profile/work-style.yaml` — 工作偏好/能量模式/职业价值观三层侧写（与 master.md 的事实型画像正交，master 中有链接）
+- `interview-vault/profile/work-style.yaml` — 工作偏好/能量模式/职业价值观三层侧写（文件定位与 vault 结构以 `interview-prep/SKILL.md`「数据存储」为准）
 - 每次深档结束后经 JD-CP-03 收集校准反馈 + 2-3 个渐进式侧写问题，更新 work-style.yaml
 
 ## 联动其他 skill

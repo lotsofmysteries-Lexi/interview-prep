@@ -99,7 +99,7 @@ industry_thread: [行业主线]
 - 角色按年限→叙事视角表自动设定，体现成长趋势
 - 行业线索从用户的行业背景提取主线
 
-### Step 5: 用户确认蓝图
+### Step 5: 用户确认蓝图（协议点 CP-02，见 interaction-protocol.md）
 
 ```
 这是根据你的情况生成的项目规划蓝图。你可以调整：
@@ -112,7 +112,7 @@ industry_thread: [行业主线]
 确认后我们开始逐个项目的场景选择。
 ```
 
-用户确认后，将画像和蓝图存入 vault：
+用户确认后（CP-02），**立即**将画像和蓝图写入 vault 文件（展示 ≠ 落盘，见 interaction-protocol.md 执行规则 7）：
 
 ```
 interview-vault/profile/master.md

@@ -24,7 +24,7 @@ description: 面试口述与问答演练：基于 qa-db 题库 × vault 项目�
 
 | 层 | 来源 | 提供什么 |
 |----|------|---------|
-| 题库层 | `interview-qa/references/qa-db/`（跨 skill 单一事实源） | 通用题干 + 回答框架 + 融合钩子（122 题，五类） |
+| 题库层 | `interview-qa/references/qa-db/`（跨 skill 单一事实源） | 通用题干 + 回答框架 + 融合钩子（120+ 题，五类，实时计数见 index.md） |
 | 事实层 | `projects/proj-*/full-card.md`（咬合总账/方案细节/追问预埋）+ `profile/master.md`（骨架/软肋清单） | 具体数字、架构决策、项目名 |
 | 口述版 | projects/proj-*/full-card.md → stages.solution + extracted_indices.metrics | — |
 | 自我介绍 | profile/master.md + 跨项目 evidence + industry_thread | — |

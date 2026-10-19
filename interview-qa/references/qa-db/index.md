@@ -1,6 +1,6 @@
 # qa-db 总索引
 
-> 由 qa-db-tools.py 自动生成，请勿手工编辑。共 122 道 active 题（另有 0 道非 active 未列出）。
+> 由 qa-db-tools.py 自动生成，请勿手工编辑。共 123 道 active 题（另有 0 道非 active 未列出）。
 
 ## 项目与产品经验（17 题）
 
@@ -106,7 +106,7 @@
 | Q-AT-047 | 你在项目中有没有积累让大模型输出规范化的经验？ | output-normalization, post-processing, sft |
 | Q-AT-048 | 说说对 Deep Research 和 Deep Thinking 的理解及二者的区别 | deep-research, reasoning, ai-infra |
 
-## 非技术（26 题）
+## 非技术（27 题）
 
 | 题号 | 题干 | tags |
 |------|------|------|
@@ -136,6 +136,7 @@
 | Q-NT-024 | AI 上线前后的对比？（效果如何对比） | before-after, metrics, comparison |
 | Q-NT-025 | 你知道市面上哪些优秀的 AI 产品？ | product-landscape, examples, insight |
 | Q-NT-026 | 讲一个你觉得最有价值的 2B LLM 落地场景？ | b-end-scenario, value, case |
+| Q-NT-027 | 甲方（企业内部）AI 产品经理，除了项目交付之外还有哪些非项目职能与价值？ | enterprise-ai, role-landscape, non-project-value, career-growth |
 
 ## 售前交付/行业方案（7 题）
 

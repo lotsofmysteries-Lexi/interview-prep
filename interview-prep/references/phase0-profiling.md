@@ -112,7 +112,7 @@ industry_thread: [行业主线]
 确认后我们开始逐个项目的场景选择。
 ```
 
-用户确认后，将画像和蓝图存入 vault：
+用户确认后（CP-02），**立即**将画像和蓝图写入 vault 文件（展示 ≠ 落盘，见 interaction-protocol.md 执行规则 7）：
 
 ```
 interview-vault/profile/master.md

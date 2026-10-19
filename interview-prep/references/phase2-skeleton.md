@@ -213,7 +213,7 @@ Phase 3 全量生成时在对应阶段展开讲。
 
 ## 骨架存储
 
-每个项目的骨架**追加**写入 master 的骨架章节（v2.0 不再使用独立 skeleton.md）：
+每个项目的骨架**追加**写入 master 的骨架章节（v2.0 不再使用独立 skeleton.md；"展示 ≠ 落盘"的强制规则见 interaction-protocol.md 执行规则 7——用户确认后必须实际写入文件，对话展示不算交付）：
 
 ```
 interview-vault/profile/master.md → 「## 项目骨架一览」章节下的「### proj-{NNN}：{项目名}」小节

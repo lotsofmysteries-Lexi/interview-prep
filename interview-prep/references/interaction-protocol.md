@@ -74,5 +74,4 @@
 
 ## 与审计的闭环
 
-- 每个 CP 的触发/跳过写 usage-log 记录点：`{"event":"hitl_fired","cp":"CP-06"}` / `{"event":"hitl_skipped","cp":"CP-06","reason":"batch_authorization"}`
-- 会话收尾统计：`预设确认点 N ｜ 实际触发 M ｜ 声明跳过 K ｜ 无声明漏发 X`——**X 必须为 0**，不为 0 时在 log 改进信号字段单列并当场向用户说明
+每个 CP 的触发/跳过写 usage-log 记录点（`hitl_fired` / `hitl_skipped`），收尾统计格式与 **X 必须为 0** 的审计口径以 `usage-log-protocol.md`「HITL 审计统计」为唯一事实源，此处不重复。

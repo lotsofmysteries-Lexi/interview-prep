@@ -1,6 +1,6 @@
 ---
 name: interview-qa
-description: 面试口述与问答演练：基于 qa-db 题库 × vault 项目档案做交互式 QA 演练、面试口述版（3-5分钟/项目）、自我介绍（30秒/1分钟/3分钟三版本）。当用户要"QA演练""口述版""项目讲述""自我介绍"等面试表达材料时使用。
+description: 面试口述与问答演练：基于 qa-db 题库 × vault 项目档案做交互式 QA 演练、面试口述版（1.5分钟/项目主力版）、自我介绍（3分钟/1分钟两版本）。当用户要"QA演练""口述版""项目讲述""自我介绍"等面试表达材料时使用。
 ---
 
 # interview-qa — 交互式 QA 演练 + 口述版 + 自我介绍
@@ -16,7 +16,7 @@ description: 面试口述与问答演练：基于 qa-db 题库 × vault 项目�
 
 | 用户意图 | 路由目标 | 说明 |
 |---------|---------|------|
-| "QA演练" / "考我QA" / "追问准备" | 交互式 QA 演练 | `references/qa-bank-rules.md` |
+| "QA演练" / "考我QA" / "追问准备" | 交互式 QA 演练 | `references/qa-drill-rules.md` |
 | "口述版" / "怎么讲" | 口述版生成 | `references/oral-version-rules.md` |
 | "自我介绍" | 自我介绍生成 | `references/self-intro-rules.md` |
 

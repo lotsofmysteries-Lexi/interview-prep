@@ -1,0 +1,29 @@
+{
+  "name": "lexi-interview-skills",
+  "version": "1.0.0",
+  "description": "interview-* skill suite for WorkBuddy: prep / jd / qa / resume / mock / review",
+  "bin": {
+    "interview-skills": "cli.js"
+  },
+  "files": [
+    "cli.js",
+    "README.md",
+    "interview-prep",
+    "interview-jd",
+    "interview-qa",
+    "interview-resume",
+    "interview-mock",
+    "interview-review"
+  ],
+  "keywords": [
+    "workbuddy",
+    "skill",
+    "interview",
+    "resume",
+    "ai-product-manager"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.14.0"
+  }
+}

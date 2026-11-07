@@ -52,12 +52,12 @@
 
 ### Step 4: 与追问预埋去重
 
-- full-card `extracted_indices.qa_bank`（追问预埋）是**项目专属 QA 的唯一事实源**，不重复演练
+- full-card `extracted_indices.qa_bank`（追问预埋）是项目专属 QA 的唯一事实源（声明见 `../SKILL.md`），不重复演练
 - 命中题与追问预埋考点重叠时，只讲题库框架带来的**增量视角**，或跳过
 
 ### Step 5: 留存（仅用户要求）
 
-写入 `interviews/qa-sessions/{日期}-{主题}.md`：本次演练的题号清单 + 用户薄弱点记录。不进 `projects/`，不生成 qa-bank.md。
+写入 `interviews/qa-sessions/{日期}-{主题}.md`：本次演练的题号清单 + 用户薄弱点记录。不进 `projects/`。
 
 ## 答案质量规则
 

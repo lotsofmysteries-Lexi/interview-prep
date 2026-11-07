@@ -13,12 +13,12 @@
 ```json
 {"t":"2026-10-02T19:30:00","phase":"phase3-proj001","event":"file_write","target":"full-card.md","tokens_est":12000}
 {"t":"...","phase":"phase3-proj001","event":"user_feedback","quote":"这里需要扩充两个 agent 怎么编排","rework":"深度不足"}
-{"t":"...","phase":"deploy","event":"error","detail":"Edit old_string not found","resolution":"reread+retry"}
-  {"t":"...","phase":"phase3-full","event":"hitl_fired","cp":"CP-06"}
-  {"t":"...","phase":"phase3-full","event":"hitl_skipped","cp":"CP-07","reason":"batch_authorization"}
+{"t":"...","phase":"phase3-full","event":"error","detail":"Edit old_string not found","resolution":"reread+retry"}
+{"t":"...","phase":"phase3-full","event":"hitl_fired","cp":"CP-06"}
+{"t":"...","phase":"phase3-full","event":"hitl_skipped","cp":"CP-07","reason":"batch_authorization"}
 ```
 
-- `phase`：phase0-profiling / phase1-scene / phase2-skeleton / phase3-full / phase4-entry / qa / resume / jd / mock / review / deploy
+- `phase`：phase0-profiling / phase1-scene / phase2-skeleton / phase3-full / phase4-entry / qa / resume / jd / mock / review
 - `event`：file_read / file_write / user_feedback / error / tool_fail / stage_done / **hitl_fired / hitl_skipped**（v2.2 交互协议审计，cp 字段必填，见 `interaction-protocol.md`）
 - `tokens_est`：粗估即可（字符量 ÷ 1.5，中文），标注高消耗环节用
 
@@ -30,7 +30,7 @@
 
 X 不为 0 时：在「改进信号」字段单列每次漏发的 CP 与所处上下文，并当场向用户说明。
 
-## 最终 log 字段规范
+## 最终 log 字段规范（成文后输出 log 路径并告知用户 = 协议点 CP-15，见 interaction-protocol.md）
 
 文件：workspace 下 `skill-logs/usage-{skill名}-{日期}-{人设名}.md`
 

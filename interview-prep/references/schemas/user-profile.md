@@ -37,8 +37,7 @@ user_profile:
   delivery_mode:
     primary: enum [全自研, 部分外包, 服务商合作, 混合]
     description: >
-      只影响"谁执行"，不影响"谁懂技术"。
-      无论哪种模式，用户都深度参与方案设计，对技术细节非常了解。
+      交付模式原则见 calibration-rules.md §4（只影响"谁执行"，不影响"谁懂技术"）。
 ```
 
 ## 系统派生字段（采集完成后自动计算）

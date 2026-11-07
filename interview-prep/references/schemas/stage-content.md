@@ -45,8 +45,7 @@ stage:
       unit: string              # 如"周""轮""条"
     calibration_source: string  # 校准依据（团队规模/项目周期/公司体量）
     reasonable_path: string     # 所选路径（自研/外包标注/开源+校验等）及理由
-    # 约束：数字必须互相咬合
-    # 示例：8000条 ÷ 3人 ÷ 15天 ≈ 178条/人/天（法律文本合理范围100-200条）
+    # 约束：数字必须互相咬合（咬合校验示例见 calibration-rules.md §5.1）
 
   # ── 追问预埋 ──
   probing_prep:

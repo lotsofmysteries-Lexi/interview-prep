@@ -241,13 +241,13 @@ interview-vault/projects/proj-{NNN}/
 - v1 的 `qa-bank.md`（含 export-qa-bank.py 导出流程）已废弃，`extracted_indices.qa_bank` 仍保留在 full-card 内，作为**追问预埋的唯一事实源**
 - QA 演练题不再落盘：由 interview-qa 的交互环节现场生成（题库层 `interview-qa/references/qa-db/` 命中 × full-card 事实层），逐题与用户确认
 - 用户希望留存演练结果时，写入 `interviews/qa-sessions/{日期}-{主题}.md`，不进 `projects/`
-- 「高频通用追问」（最大挑战 / 最大贡献 / 量化成果 / 团队协作 / 重新做会怎么改）同样在交互环节生成，引用该项目演进脉络与 metrics；注意各项目的**讲法边界**（如个人工具项目价值不得折算成金额）
+- 「高频通用追问」同样在交互环节生成，5 条清单与讲法边界见 `interview-qa/references/qa-drill-rules.md`「高频通用追问」
 
 ### 旧 vault 一次性迁移（v1 → v2；CP-14，动手前须确认）
 
 遇到 v1 结构的 vault（含 skeleton.md / qa-bank.md）时，先迁移再继续：
 
-1. 三个 `skeleton.md` 的骨架 + 信源分界并入 `profile/master.md`「项目骨架一览」各小节 → 删除原文件
+1. N 个 `skeleton.md` 的骨架 + 信源分界并入 `profile/master.md`「项目骨架一览」各小节 → 删除原文件
 2. 各 `qa-bank.md` 的条目与 full-card 追问预埋**去重合并**（追问预埋是唯一事实源）→ 删除原文件
 3. `outputs/qa-bank-full.md` 移入 `interviews/` 或废弃（询问用户）
 4. 迁移后每个项目目录只剩 `full-card.md`
